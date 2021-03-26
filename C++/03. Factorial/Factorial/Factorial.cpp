@@ -1,7 +1,4 @@
-﻿// Factorial.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
-#include <iostream>
+﻿#include <iostream>
 using namespace std;
 
 unsigned long long factorial(unsigned long long n)
@@ -26,12 +23,10 @@ int main()
         cout << "잘못된 숫자 입니다." << endl;
         return 0;
     }
-    else
-    {
-        factorialNum = factorial(inputNum);
-        cout << inputNum << "팩토리얼은 " << factorialNum << "입니다." << endl;
-    }
 
+    factorialNum = factorial(inputNum);
+
+    cout << inputNum << "팩토리얼은 " << factorialNum << "입니다." << endl;
     cout << inputNum << "! = " << factorialNum << endl;;
 
     return 0;
