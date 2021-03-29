@@ -15,25 +15,42 @@ int setNum() //입력할 문자열의 개수를 설정하는 함수
     return num;
 }
 
-void setInput(char input[10][100], int num) //입력을 받는 함수
+void setInput(char input[10][101], int num) //입력을 받는 함수
 {
-    cout << "문자열을 입력해 주세요 (한글은 안됨)" << endl;
+    cout << "문자열을 입력해 주세요 (최대 100글자, 한글은 안됨)" << endl;
     cin.ignore();
 
     for (int i = 0; i < num; i++)
     {
         cout << i + 1 << ": ";
-        cin.getline(input[i], 99);
+        cin.getline(input[i], 102);
+
+        bool check = false;
+
+        for (int j = 0; j <= 100; j++)
+        {
+            if (input[i][j] == NULL)
+            {
+                check = true;
+                break;
+            }
+        }
+
+        if (!check)
+        {
+            cout << "잘못된 문자열 입니다." << endl;
+            exit(0);
+        }
     }
 
     cout << endl;
 }
 
-void getLast(char input[10][100], int last[10], int num) //마지막 문자를 찾는 함수
+void getLast(char input[10][101], int last[10], int num) //마지막 문자를 찾는 함수
 {
     for (int i = 0; i < num; i++)
     {
-        for (int j = 0; j < 100; j++)
+        for (int j = 0; j <= 101; j++)
         {
             if (input[i][j] == 0)
             {
@@ -44,7 +61,7 @@ void getLast(char input[10][100], int last[10], int num) //마지막 문자를 �
     }
 }
 
-void getReverseString(char input[10][100], char reverseString[10][100], int last[10], int num) //문자열을 거꾸로 바꾸는 함수
+void getReverseString(char input[10][101], char reverseString[10][101], int last[10], int num) //문자열을 거꾸로 바꾸는 함수
 {
     for (int i = 0; i < num; i++)
     {
@@ -60,15 +77,15 @@ void getReverseString(char input[10][100], char reverseString[10][100], int last
     }
 }
 
-void printInput(char input[10][100], int num) //문자열을 출력하는 함수
+void printInput(char input[10][101], int num) //문자열을 출력하는 함수
 {
     int last[10];
-    char reverseString[10][100];
+    char reverseString[10][101];
 
     getLast(input, last, num);
     getReverseString(input, reverseString, last, num);
 
-    cout << "문자열을 거꾸로 출력" << endl;
+    cout << "문자열을 거꾸로 출력" << endl << endl;
     for (int i = 0; i < num; i++)
     {
         cout << i + 1 << ": " << reverseString[i] << endl;
@@ -77,9 +94,9 @@ void printInput(char input[10][100], int num) //문자열을 출력하는 함수
 
 int main()
 {
-    cout << "입력 받은 문자열을 거꾸로 출력하는 프로그램" << endl;
+    cout << "입력 받은 문자열을 거꾸로 출력하는 프로그램" << endl << endl;
 
-    char input[10][100];
+    char input[10][101];
     int num = setNum();
 
     setInput(input, num);
