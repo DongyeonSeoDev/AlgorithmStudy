@@ -6,7 +6,7 @@ int main()
     unsigned long long num;
     unsigned long long total = 0;
 
-    cout << "1부터 4294967295까지의 수 중에서 1개를 입력해 주세요: ";
+    cout << "1부터 4,294,967,295까지의 수 중에서 1개를 입력해 주세요: ";
     cin >> num;
     cout << endl;
 
