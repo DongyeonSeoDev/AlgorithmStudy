@@ -106,6 +106,7 @@ void InsertNodeBefore(Node* current, Node* newNode)
 	newNode->nextNode = current;
 	newNode->prevNode = current->prevNode;
 	current->prevNode->nextNode = newNode;
+	current->prevNode = newNode;
 }
 
 int main()
