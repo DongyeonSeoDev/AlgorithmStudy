@@ -16,7 +16,7 @@ void setInput(long long& num) //입력을 받는 함수
     cout << endl;
 }
 
-void getLast(long long& num, long long& digit) //자릿수를 찾는 함수
+void getLast(long long& num, long long& digit, bool& isMinus) //자릿수를 찾는 함수
 {
     if (num >= 0)
     {
@@ -43,15 +43,23 @@ void getLast(long long& num, long long& digit) //자릿수를 찾는 함수
 
             digit *= 10;
         }
+
+        isMinus = true;
+        num = -num;
     }
 }
 
-void getReverseString(long long& num, long long& reverseNumber, long long& digit) //숫자를 거꾸로 바꾸는 함수
+void getReverseString(long long& num, long long& reverseNumber, long long& digit, int& numCount) //숫자를 거꾸로 바꾸는 함수
 {
     for (long long i = 1; i <= digit; i *= 10)
     {
         reverseNumber += num / (digit / i) * i;
         num -= num / (digit / i) * (digit / i);
+
+        if (num == 0)
+        {
+            numCount++;
+        }
     }
 }
 
@@ -59,11 +67,25 @@ void printNumber(long long& num) //숫자를 출력하는 함수
 {
     long long digit = 1;
     long long reverseNumber = 0;
+    int numCount = -1;
+    bool isMinus = false;
 
-    getLast(num, digit);
-    getReverseString(num, reverseNumber, digit);
+    getLast(num, digit, isMinus);
+    getReverseString(num, reverseNumber, digit, numCount);
 
-    cout << "숫자를 거꾸로 출력: " << reverseNumber << endl;
+    cout << "숫자를 거꾸로 출력: ";
+
+    if (isMinus)
+    {
+        cout << "-";
+    }
+
+    for (int i = 0; i < numCount; i++)
+    {
+        cout << "0";
+    }
+
+    cout << reverseNumber << endl;
 }
 
 int main()
