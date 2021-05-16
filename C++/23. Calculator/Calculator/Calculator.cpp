@@ -150,17 +150,8 @@ void calculation(stack<char>* calculationStack, stack<float>* numStack, int mult
                 numStack->pop();
                 float result = 0;
 
-                switch (temp)
-                {
-                case '+':
-                    result = temp2 + temp1;
-                    numStack->push(result);
-                    break;
-                case '-':
-                    result = temp2 - temp1;
-                    numStack->push(result);
-                    break;
-                }
+                result = temp2 + temp1;
+                numStack->push(result);
             }
         }
         else
@@ -174,25 +165,16 @@ void calculation(stack<char>* calculationStack, stack<float>* numStack, int mult
                 char temp = calculationStack->top();
                 calculationStack->pop();
 
-                if (temp == '*' || temp == '/')
+                if (temp == '*')
                 {
                     float temp1 = numStack->top();
                     numStack->pop();
                     float temp2 = numStack->top();
                     numStack->pop();
                     float result;
-
-                    switch (temp)
-                    {
-                    case '*':
-                        result = temp2 * temp1;
-                        numStack->push(result);
-                        break;
-                    case '/':
-                        result = temp2 / temp1;
-                        numStack->push(result);
-                        break;
-                    }
+                    
+                    result = temp2 * temp1;
+                    numStack->push(result);
 
                     while (!sFloatTemp.empty())
                     {
