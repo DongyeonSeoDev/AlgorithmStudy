@@ -1,5 +1,3 @@
-//20409 ¼­µ¿¿¬
-
 #pragma once
 #include <vector>
 

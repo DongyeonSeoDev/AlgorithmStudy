@@ -1,5 +1,3 @@
-//20409 ¼­µ¿¿¬
-
 #include <iostream>
 using namespace std;
 #include "BinaryTree.h"
