@@ -22,6 +22,7 @@ namespace Number
         {
             if (x < -10000000 || x > 10000000 || n < 1 || n > 1000)
             {
+                Console.WriteLine("잘못된 입력 입니다.");
                 return null;
             }
 
