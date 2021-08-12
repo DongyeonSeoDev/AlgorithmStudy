@@ -14,13 +14,13 @@ namespace GreatestCommonDivisorAndLargestCommonMultiple
     {
         static void Main(string[] args)
         {
-            Array.ForEach(Solution(2, 10), x => Console.WriteLine(x + " "));
+            Array.ForEach(Solution(2, 10), x => Console.Write(x + " "));
             Console.WriteLine();
 
-            Array.ForEach(Solution2(2, 10), x => Console.WriteLine(x + " "));
+            Array.ForEach(Solution2(2, 10), x => Console.Write(x + " "));
             Console.WriteLine();
 
-            Array.ForEach(Solution(2, 10), x => Console.WriteLine(x + " "));
+            Array.ForEach(EuclideanAlgorithm(2, 10), x => Console.Write(x + " "));
             Console.WriteLine();
         }
 
@@ -83,6 +83,12 @@ namespace GreatestCommonDivisorAndLargestCommonMultiple
         //유클리드 호제법
         static int[] EuclideanAlgorithm(int num1, int num2)
         {
+            if (num1 < 1 || num1 > 1000000 || num2 < 1 || num2 > 1000000)
+            {
+                Console.WriteLine("잘못된 입력 입니다.");
+                return new int[2] { 0, 0 };
+            }
+
             int min = Math.Min(num1, num2);
             int max = Math.Max(num1, num2);
             int temp = 0;
