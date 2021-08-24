@@ -16,11 +16,23 @@ namespace SortingStrings
     {
         static void Main(string[] args)
         {
-            List<string> list = new List<string> { "sun", "bed", "car" };
+            List<List<string>> strings = new List<List<string>> 
+            { 
+                new List<string> { "sun", "bed", "car" }, 
+                new List<string> { "ABC", "BCA", "CAB" } 
+            };
 
-            Console.WriteLine(Solution(list, 0));
-            Console.WriteLine(Solution(list, 1));
-            Console.WriteLine(Solution(list, 2));
+            strings.ForEach(x => 
+            { 
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Write(i + "번째 인덱스 기준으로 오름차순 정렬: ");
+                    Solution(x, i).ForEach(y => Console.Write(y + " "));
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine();
+            });
         }
 
         static List<string> Solution(List<string> strings, int n)
