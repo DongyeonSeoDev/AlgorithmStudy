@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChooseTwoAndAdd", "ChooseTwoAndAdd\ChooseTwoAndAdd.csproj", "{AD4A78C3-FC71-49C9-8D38-01F4A21A710B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD4A78C3-FC71-49C9-8D38-01F4A21A710B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4A78C3-FC71-49C9-8D38-01F4A21A710B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4A78C3-FC71-49C9-8D38-01F4A21A710B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4A78C3-FC71-49C9-8D38-01F4A21A710B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B79D2B56-C767-4756-A2F0-755501082B97}
+	EndGlobalSection
+EndGlobal
